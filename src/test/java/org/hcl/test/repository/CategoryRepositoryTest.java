@@ -23,10 +23,10 @@ import com.github.springtestdbunit.annotation.DatabaseTearDown;
 		TransactionalTestExecutionListener.class, DbUnitTestExecutionListener.class })
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = UiApplication.class)
-@DatabaseSetup(CategoryRepositoryIT.DATASET)
-@DatabaseTearDown(type = DatabaseOperation.DELETE_ALL, value = { CategoryRepositoryIT.DATASET })
+@DatabaseSetup(CategoryRepositoryTest.DATASET)
+@DatabaseTearDown(type = DatabaseOperation.DELETE_ALL, value = { CategoryRepositoryTest.DATASET })
 @DirtiesContext
-public class CategoryRepositoryIT {
+public class CategoryRepositoryTest {
 	protected static final String DATASET = "classpath:datasets/it-categories.xml";
 	private static final String FIRST_ITEM = "Item 1";
 	private static final String THIRD_ITEM = "Item 2";
