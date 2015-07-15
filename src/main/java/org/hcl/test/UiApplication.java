@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.hcl.test.model.Book;
 import org.hcl.test.model.Category;
+import org.hcl.test.service.BookService;
 import org.hcl.test.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +25,9 @@ public class UiApplication {
 	
 	@Autowired
 	CategoryService categoryService;
+
+	@Autowired
+	BookService bookService;
 	
 	@RequestMapping("/resource")
 	public Map<String,Object> home() {
@@ -38,7 +43,13 @@ public class UiApplication {
 		return categoryService.GetCategories();
 	}
 
-    public static void main(String[] args) {
+	@RequestMapping("/books")
+	public List<Book> books() {
+		
+		return bookService.GetBooks();
+	}
+
+	public static void main(String[] args) {
         SpringApplication.run(UiApplication.class, args);
     }
 }

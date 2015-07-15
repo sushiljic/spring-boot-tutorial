@@ -12,7 +12,7 @@ create table book (
     year integer,
     author character varying(45),
     isbn character varying(45),
-    category_id integer REFERENCES category (id),
+    category_id integer UNIQUE, 
     CONSTRAINT book_pkey PRIMARY KEY (id)
 );
 
@@ -79,3 +79,6 @@ create table orders (
 	account_id integer REFERENCES  account (id),	
     CONSTRAINT order_details PRIMARY KEY (id)
 );
+
+insert into category values (1, 'Fiction'); 
+insert into book values (1, 'Who framed Roger Rabbit', 'Who framed Roger Rabbit', 45, 1976, 'Krishna', '23456', 1); 
