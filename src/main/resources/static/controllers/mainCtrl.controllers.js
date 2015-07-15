@@ -34,20 +34,6 @@ angular.module('appDoCFD')
 
 	}
 
-	//reference Data
-	 masterDataAPI.getData().then( function( data ) {
-	 	var ref = data[0].configdetails[0].referencedata;
-		$scope.plan.refData = {	   
-			"referenceArea": Number( ref.RefArea ),
-			"referenceLength": Number ( ref.RollRefLength ),
-			"referenceSpan":  Number ( ref.PitchRefLength ), //278.51,
-			"momentOriginX":  Number ( ref.MomCenterX ), //1244.1,
-			"momentOriginY":  Number ( ref.MomCenterY ), //0,
-			"momentOriginZ":  Number ( ref.MomCenterZ ), //214.1,
-			"geometryUnit":"in"	   
-		};
-	});
-
 	$scope.save = function (form) {
 		//Generic save for the plan pages 
 		saveFormDataSvc.saveData($scope, form, $scope.plan);

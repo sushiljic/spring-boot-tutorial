@@ -2,8 +2,7 @@
 
 angular.module('appDoCFD', ['ui.router', 'ngSanitize', 'ui.bootstrap', 'ngTagsInput', 'angularTreeview', 'dynform', 'ngGrid','jsonFormatter'])
 
-    .value('masterDataURL', 'data/Master1.json')
-    .value('flightConditionDataURL', 'data/computeFlightCondition.json')
+    .value('masterDataURL', '')
 	.config(['$stateProvider','$urlRouterProvider',
 	function($stateProvider, $urlRouterProvider) {
 	
