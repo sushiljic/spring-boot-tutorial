@@ -12,7 +12,13 @@ In this tutorial I will demonstrate a medium complex full stack application usin
 * Minimum Boilerplate coding. Minimum amount of Handcrafted POJOs. Almost no xml configuration.
 * Design is more based on Test Driven Development (TDD) including Java and Javascript side
 
-To run the application 
-```
+To run the application: 
+
+* start Postgres and create a database called pg and run the sqlscripts/schema.sql 
+* run the below command
 
 ```
+  mvn clean exec:java test
+```
+
+Once the test is successful, do the code walk thru the tests
