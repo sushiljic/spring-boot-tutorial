@@ -67,17 +67,19 @@ create table role_permission (
 
 create table order_details (
 	id serial,
-	book_id integer REFERENCES book (id),
+	book_id integer,
 	quantity decimal,
-    CONSTRAINT order_details PRIMARY KEY (id)
+	orders_id integer,
+    CONSTRAINT order_details_pkey PRIMARY KEY (id)
 );
 
 create table orders (
 	id serial,
-	shipping_address_id integer REFERENCES address (id),
-	billing_address_id integer REFERENCES address (id),
-	account_id integer REFERENCES  account (id),	
-    CONSTRAINT order_details PRIMARY KEY (id)
+	shipping_address_id integer null,
+	billing_address_id integer null,
+	account_id integer,
+	is_in_cart boolean,
+    CONSTRAINT order_pkey PRIMARY KEY (id)
 );
 
 insert into category values (1, 'Fiction'); 
