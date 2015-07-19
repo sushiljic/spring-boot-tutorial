@@ -25,6 +25,7 @@
 		<spring-test-dbunit.version>1.2.1</spring-test-dbunit.version>
 		<assertj.version>3.1.0</assertj.version>
 		<postgres-version>9.3-1100-jdbc4</postgres-version>
+		<h2-version>1.4.187</h2-version>
 	</properties>
 
 	<dependencies>
@@ -74,7 +75,11 @@
 			<version>${assertj.version}</version>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
